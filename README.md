@@ -6,7 +6,7 @@ Ruby plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
 
 ## Install
 
-```
+```shell
 asdf plugin-add ruby https://github.com/seivan/asdf-ruby.git
 ```
 
@@ -24,28 +24,28 @@ Under the hood, asdf-ruby uses [ruby-install](https://github.com/postmodern/ruby
 
 You may also apply custom patches before building with `RUBY_APPLY_PATCHES`, e.g.
 
-```sh
+```shell
 RUBY_APPLY_PATCHES=$'dir/1.patch\n2.patch\nhttp://example.com/3.patch' asdf install ruby 2.4.1
 RUBY_APPLY_PATCHES="https://raw.githubusercontent.com/rvm/rvm/master/patchsets/ruby/2.1.1/railsexpress" asdf install ruby 2.1.1
 ```
 
 Although unecessary with ruby-install, you can still pass custom options
 
-```sh
+```shell
 RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)" asdf install ruby 2.4.0
 ```
 
-```sh
+```shell
 RUBY_CONFIGURE_OPTS="--disable-install-doc" asdf install ruby 3.0.0
 ```
 
 By default asdf-ruby uses the latest release of ruby-install, but you can choose your own branch/tag through the `ASDF_RUBY_INSTALL_VERSION` variable:
 
-```sh
+```shell
 ASDF_RUBY_INSTALL_VERSION="v0.8.0" asdf install ruby 2.6.4
 ```
 
-```sh
+```shell
 ASDF_RUBY_INSTALL_VERSION="master" asdf install ruby 2.6.4
 ```
 
@@ -56,7 +56,7 @@ asdf-ruby can automatically install a set of default gems right after
 installing a Ruby version. To enable this feature, provide a
 `$HOME/.default-gems` file that lists one gem per line, for example:
 
-```
+```shell
 bundler
 pry
 gem-ctags
